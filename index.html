@@ -7,32 +7,95 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
     <link rel="stylesheet" href="./style.css" />
-    <title></title>
+    <title>bellsanct.github.io</title>
   </head>
   <body>
-    <div id="typed-strings">
-      <p>
-        Typed.js is a
-        <strong>JavaScript</strong>
-        library.
-      </p>
-      <p>
-        It
-        <em>types</em>
-        out sentences.
-      </p>
+    <div class="terminal-nav">
+      <div class="terminal-logo">
+        <div class="logo terminal-prompt"><a href="#" class="no-style">./bellsanct.github.io</a></div>
+      </div>
+      <nav class="terminal-menu">
+        <ul>
+          <li><a class="menu-item" href="#About-me">About me</a></li>
+          <li><a class="menu-item" href="#organizer">Organizer</a></li>
+          <li><a class="menu-item" href="#dj">DJ</a></li>
+          <li><a class="menu-item" href="#works">Works</a></li>
+          <li><a class="menu-item" href="#others">Others</a></li>
+        </ul>
+      </nav>
     </div>
-    <span class="typed"></span>
+
+    <hr />
+
+    <h1 id="about-me">$ About me</h1>
+    <div id="typed-strings-name">
+      <p>Name : がーべ(a.k.a bellsanct)</p>
+    </div>
+    <span class="typed-name"></span>
+    <br />
+    <div id="typed-strings-type">
+      <p>Type : Web Engineer, DJ, Organizer</p>
+    </div>
+    <span class="typed-type"></span>
+    <br />
+    <div id="typed-strings-hobby">
+      <p>Hobby: THE iDOLM@STER(Million live)</p>
+    </div>
+    <span class="typed-hobby"></span>
+    <br />
+    <div id="typed-strings-dj">
+      <p>DJ : Trance, Tech Dance, Hard Dance, funkot etc...</p>
+    </div>
+    <span class="typed-dj"></span>
   </body>
 
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-      var typed = new Typed(".typed", {
-        stringsElement: "#typed-strings",
+      var typed = new Typed(".typed-name", {
+        stringsElement: "#typed-strings-name",
         typeSpeed: 20,
-        backSpeed: 20,
+        backSpeed: 10,
         startDelay: 2000,
-        loop: true,
+        onComplete: function (self) {
+          var cursor = $(".typed-cursor").find().prevObject[0];
+          $(cursor).css({ display: "none" });
+        },
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      var typed = new Typed(".typed-type", {
+        stringsElement: "#typed-strings-type",
+        typeSpeed: 20,
+        backSpeed: 10,
+        startDelay: 3500,
+        onComplete: function (self) {
+          var cursor = $(".typed-cursor").find().prevObject[1];
+          $(cursor).css({ display: "none" });
+        },
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      var typed = new Typed(".typed-hobby", {
+        stringsElement: "#typed-strings-hobby",
+        typeSpeed: 20,
+        backSpeed: 10,
+        startDelay: 5000,
+        onComplete: function (self) {
+          var cursor = $(".typed-cursor").find().prevObject[2];
+          $(cursor).css({ display: "none" });
+        },
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      var typed = new Typed(".typed-dj", {
+        stringsElement: "#typed-strings-dj",
+        typeSpeed: 20,
+        backSpeed: 10,
+        startDelay: 6500,
+        onComplete: function (self) {
+          var cursor = $(".typed-cursor").find().prevObject[1];
+          $(cursor).css({ display: "none" });
+        },
       });
     });
   </script>

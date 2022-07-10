@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="typed-strings">
+      <p>
+        Typed.js is a
+        <strong>JavaScript</strong>
+        library.
+      </p>
+      <p>
+        It
+        <em>types</em>
+        out sentences.
+      </p>
+    </div>
+    <span class="typed"></span>
+  </body>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      var typed = new Typed(".typed", {
+        stringsElement: "#typed-strings",
+        typeSpeed: 20,
+        backSpeed: 20,
+        startDelay: 2000,
+        loop: true,
+      });
+    });
+  </script>
+</html>

@@ -2,16 +2,10 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0 maximum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>bellsanct.github.io</title>
   </head>
@@ -37,75 +31,33 @@
 
     <h1 id="about-me">> About me</h1>
     <section class="section-about-me">
-      <div id="typed-strings-name">
-        <p>Name : がーべ(a.k.a bellsanct)</p>
+      <div id="typed-strings">
+        <p>
+          Name : がーべ(a.k.a bellsanct)
+          <br />
+          Type : Web Engineer, DJ, Organizer
+          <br />
+          Hobby: THE iDOLM@STER(Million live) -> In charge of Nao Yokoyama
+          <br />
+          Hobby: Genshin Impact(iOS)
+          <br />
+          Hobby: DJ (Trance, Tech Dance, Hard Dance, funkot etc...)
+          <br />
+          work experience : HTML / CSS / PHP / JavaScript(JQuery,React) etc...
+        </p>
       </div>
-      <span class="typed-name"></span>
-      <br />
-      <div id="typed-strings-type">
-        <p>Type : Web Engineer, DJ, Organizer</p>
-      </div>
-      <span class="typed-type"></span>
-      <br />
-      <div id="typed-strings-hobby">
-        <p>Hobby: THE iDOLM@STER(Million live) -> In charge of Nao Yokoyama<br />Hobby: Genshin Impact(iOS)</p>
-      </div>
-      <span class="typed-hobby"></span>
-      <br />
-      <div id="typed-strings-dj">
-        <p>DJ : Trance, Tech Dance, Hard Dance, funkot etc...</p>
-      </div>
-      <span class="typed-dj"></span>
+      <span class="typed"></span>
     </section>
   </body>
 
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-      var typed = new Typed(".typed-name", {
-        stringsElement: "#typed-strings-name",
+      var typed = new Typed(".typed", {
+        stringsElement: "#typed-strings",
         typeSpeed: 20,
         backSpeed: 10,
         startDelay: 1000,
-        onComplete: function (self) {
-          var cursor = $(".typed-cursor").find().prevObject[0];
-          $(cursor).css({ display: "none" });
-        },
-      });
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-      var typed = new Typed(".typed-type", {
-        stringsElement: "#typed-strings-type",
-        typeSpeed: 20,
-        backSpeed: 10,
-        startDelay: 2500,
-        onComplete: function (self) {
-          var cursor = $(".typed-cursor").find().prevObject[1];
-          $(cursor).css({ display: "none" });
-        },
-      });
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-      var typed = new Typed(".typed-hobby", {
-        stringsElement: "#typed-strings-hobby",
-        typeSpeed: 20,
-        backSpeed: 10,
-        startDelay: 4500,
-        onComplete: function (self) {
-          var cursor = $(".typed-cursor").find().prevObject[2];
-          $(cursor).css({ display: "none" });
-        },
-      });
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-      var typed = new Typed(".typed-dj", {
-        stringsElement: "#typed-strings-dj",
-        typeSpeed: 20,
-        backSpeed: 10,
-        startDelay: 7500,
-        onComplete: function (self) {
-          var cursor = $(".typed-cursor").find().prevObject[1];
-          $(cursor).css({ display: "none" });
-        },
+        onComplete: function (self) {},
       });
     });
   </script>

@@ -27,7 +27,7 @@ body {
   margin: auto 20px;
 }
 
-.terminal-header {
+.terminal {
   margin-top: 50px;
 }
 
@@ -36,8 +36,8 @@ body {
 }
 
 @media (max-width: 509px) {
-  .terminal-header {
-    margin-top: 80px;
+  .terminal {
+    margin-top: 60px;
   }
   .terminal-menu li a {
     margin-left: 20px;

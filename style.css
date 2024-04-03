@@ -36,6 +36,9 @@ body {
 }
 
 @media (max-width: 509px) {
+  .terminal-header {
+    margin-top: 80px;
+  }
   .terminal-menu li a {
     margin-left: 20px;
   }

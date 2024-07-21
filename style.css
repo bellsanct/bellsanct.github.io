@@ -27,9 +27,6 @@ body {
   margin: auto 20px;
 }
 
-.no-style {
-  margin-left: 20px;
-}
 
 .terminal {
   margin-top: 50px;
@@ -37,6 +34,10 @@ body {
 
 .terminal-nav {
   margin: 0 20px 0 0;
+}
+
+.terminal-logo {
+  margin-left: 20px;
 }
 
 @media (max-width: 509px) {

@@ -27,6 +27,10 @@ body {
   margin: auto 20px;
 }
 
+.no-style {
+  margin-left: 20px;
+}
+
 .terminal {
   margin-top: 50px;
 }

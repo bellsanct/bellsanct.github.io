@@ -32,16 +32,33 @@
 		<div class="terminal-body">
 			<p>Name : がーべ</p>
 			<p>Twitter : <a href="https://twitter.com/Bell_staymen04" target="_black">@Bell_staymen04</a></p>
-			<p>Qiita : <a href="https://qiita.com/bellsanct" target="_black">https://qiita.com/bellsanct</a></p>
-			<p>Roles : Web Engineer, Manager, DJ, Organizer<br>
+			<p>Roles : Web Engineer, Project Manager, DJ, Organizer<br>
 			-&gt; HTML, CSS, PHP, NodeJS etc...</p>
 			<p>Hobby : Blue Archive<br>
 			<p>Hobby : Genshin Impact</p>
 			<p>Hobby : Houkai: Star Rail</p>
 			<p>Hobby : DJ (Trance, Tech Dance, Hard Dance, funkot etc...)</p>
+			<p>Organize : <a href="https://www.outermusicroom.site/">#OuterMusicRoom</a></p>
 			<p>Organized : <a href="https://bellsanct.github.io/kaion/">#快創音楽室</a></p>
-            <p>Organize : <a href="https://www.outermusicroom.site/omr-1">#OuterMusicRoom</a></p>
 		</div>
 	</div><span class="typed"></span>
 </body>
 </html>
+
+<script>
+	document.querySelector('.close').addEventListener('click', function () {
+		const terminal = document.querySelector('.terminal');
+		terminal.classList.add('fade-out');
+		setTimeout(() => terminal.style.display = 'none', 500); // Hide after fade out
+	});
+
+	document.querySelector('.minimize').addEventListener('click', function () {
+		const terminal = document.querySelector('.terminal');
+		terminal.classList.add('minimized');
+	});
+
+	document.querySelector('.fullscreen').addEventListener('click', function () {
+		const terminal = document.querySelector('.terminal');
+		terminal.classList.toggle('fullscreen-mode');
+	});
+</script>

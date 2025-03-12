@@ -1,64 +1,366 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0 maximum-scale=1.0" name="viewport">
-	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
-	</script>
-	<link href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" rel="stylesheet">
-	<link href="./style.css" rel="stylesheet">
-	<title>bellsanct.github.io</title>
-	<style>
-	body{background-color:#202123!important;color:#efefef;font-family:Lucida Console,Monaco,monospace;margin:0;padding:0}.terminal{border:1px solid #555;border-radius:10px;left:50%;min-height:500px;min-width:300px;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);width:90%}.terminal-title{padding-top:8px;text-align:center}@media (max-width:600px){.terminal-title{display:none;font-size:.9em;padding-right:30px!important;padding-top:10px;text-align:right}}.terminal-header{background-color:#2b2d2f;height:40px;position:relative}.terminal-header a{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #555;border-radius:50%;cursor:pointer;height:15px;outline:none;position:absolute;top:50%;transform:translateY(-50%);width:15px}.terminal-header a.close{background-color:#f92672;left:10px}.terminal-header a.minimize{background-color:#f4bf75;left:35px}.terminal-header a.fullscreen{background-color:#a6e22e;left:60px}.terminal-body{background-color:#1d1f21;height:auto;line-height:1.5;padding:10px;overflow-y:auto;}*{-webkit-appearance:none;-moz-appearance:none;appearance:none}
-	</style>
-</head>
-<body>
-	<div class="terminal-nav">
-		<div class="terminal-logo">
-			<div class="logo terminal-prompt">
-				<a class="no-style" href="#">./bellsanct.github.io</a>
-			</div>
-		</div>
-		<nav class="terminal-menu">
-			<!-- <ul> <li><a class="menu-item" href="#about-me">About me</a></li><li><a class="menu-item" href="#dj">DJ</a></li><li><a class="menu-item" href="#works">Works</a></li><li><a class="menu-item" href="#others">Others</a></li></ul>-->
-		</nav>
-	</div>
-	<div class="terminal">
-		<div class="terminal-header">
-			<div class="terminal-title">
-				<span>About Me - Bell_staymen04</span>
-			</div><a class="close" href="#"></a><a class="minimize" href="#"></a><a class="fullscreen" href="#"></a>
-		</div>
-		<div class="terminal-body">
-			<p>Name : がーべ</p>
-			<p>Twitter : <a href="https://twitter.com/Bell_staymen04" target="_black">@Bell_staymen04</a></p>
-			<p>Roles : Web Engineer, Project Manager, DJ, Organizer<br>
-			-&gt; HTML, CSS, PHP, NodeJS etc...</p>
-			<p>Hobby : Blue Archive<br>
-			<p>Hobby : Genshin Impact</p>
-			<p>Hobby : Houkai: Star Rail</p>
-			<p>Hobby : DJ (Trance, Tech Dance, Hard Dance, funkot etc...)</p>
-			<p>Organize : <a href="https://www.outermusicroom.site/">#OuterMusicRoom</a></p>
-			<p>Organized : <a href="https://bellsanct.github.io/kaion/">#快創音楽室</a></p>
-		</div>
-	</div><span class="typed"></span>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="@Bell_staymen04 Web Site" />
+    <meta property="og:description" content="@Bell_staymen04 Web Site" />
+    <meta property="og:url" content="https://bellsanct.github.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/top.webp" />
+    <title>@Bell_staymen04 Web Site</title>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="logo">@Bell_staymen04 Web Site</a>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#profile">Profile</a></li>
+              <li><a href="#events">Organize</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- プロフィールセクション -->
+    <section id="profile" class="profile">
+      <div class="container">
+        <div class="section-title">
+          <h2>Profile</h2>
+        </div>
+        <div
+          class="profile-content"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          "
+        >
+          <div class="profile-image" style="flex: 1; text-align: center">
+            <img src="/assets/icon.webp" alt="Profile Image" />
+            <p class="profile-comment">
+              音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJ。
+            </p>
+            <p class="profile-comment">
+              普段はWebサイトやWebアプリケーションの開発・運用・保守に携わりながら、インターネット上で雑用をこなしています。
+            </p>
+            <p class="profile-comment">
+              最近は県内外のスーパー銭湯通いが趣味になりつつあるが、じっとしているのが苦手なため長風呂できないことが悩み。
+            </p>
+          </div>
+          <div class="profile-text" style="flex: 1">
+            <!-- CLI風プロフィール表示 -->
+            <div class="cli-container">
+              <div class="cli-line">
+                <span class="cli-prompt">$ </span>
+                <span class="cli-command">whoami</span>
+              </div>
+              <div class="cli-line cli-response">がーべ</div>
+              <div class="cli-line">
+                <span class="cli-prompt">$ </span>
+                <span class="cli-command">cat profile.txt</span>
+              </div>
+              <div class="cli-line cli-response">
+                <span class="cli-highlight">Twitter: </span>
+                <a href="https://twitter.com/Bell_staymen04" target="_blank"
+                  >@Bell_staymen04</a
+                ><br />
+                <span class="cli-highlight">Roles: </span> Web Engineer, Project
+                Manager, DJ, Organizer
+              </div>
+
+              <div class="cli-line">
+                <span class="cli-prompt">$ </span>
+                <span class="cli-command">cat skills.txt</span>
+              </div>
+              <div class="cli-line cli-response">
+                Languages:<br />
+                HTML, CSS, JavaScript(React, Vue.js), PHP(WordPress, Laravel,
+                CodeIgniter)<br />
+                <br />
+                Database:<br />
+                MySQL, PostgreSQL, DynamoDB<br />
+                <br />
+                AWS/Cloud:<br />
+                AWS (EC2, S3, RDS, Lambda, CloudFront), CloudFormation,
+                Terraform, Serverless, CI/CD<br />
+              </div>
+
+              <div class="cli-line">
+                <span class="cli-prompt">$ </span>
+                <span class="cli-command">cat events.txt</span>
+              </div>
+              <div class="cli-line cli-response">
+                <span class="cli-highlight">Organize:</span>
+                #OuterMusicRoom<br />
+                <span class="cli-highlight">Organized:</span> #快創音楽室<br />
+                <span class="cli-highlight">Organized:</span>
+                #ROCKON_TOHOKU<br />
+              </div>
+              <div class="cli-line">
+                <span class="cli-prompt">$ </span>
+                <span class="cli-command">ls hobbies/</span>
+              </div>
+              <div class="cli-line cli-response">
+                Event_Organizing/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Planning/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Promotion/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Management/<br />
+                DJ/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Trance/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;TechDance/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;HardDance/<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Funkot/<br />
+                Blue_Archive/<br />
+                Genshin_Impact/<br />
+                Houkai_Star_Rail/<br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTSセクション -->
+    <section id="events" class="events">
+      <div class="container">
+        <div class="section-title">
+          <h2>Organize</h2>
+        </div>
+        <div class="events-slider-container">
+          <!-- 1段目：左から右へスライド -->
+          <div class="events-slider events-slider-ltr">
+            <div class="events-slider-track">
+              <a
+                href="https://outermusicroom.site/omr-3"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/o3.webp"
+                  alt="Outer Music Room Event 3"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://outermusicroom.site/omr-2"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/o2.webp"
+                  alt="Outer Music Room Event 2"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://outermusicroom.site/omr-1"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/o1.webp"
+                  alt="Outer Music Room Event 1"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://bellsanct.github.io/kaion/23/"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/23.webp"
+                  alt="Kaion Event 23"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://bellsanct.github.io/kaion/22/"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/22.webp"
+                  alt="Kaion Event 22"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://bellsanct.github.io/kaion/21/"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/21.webp"
+                  alt="Kaion Event 21"
+                  class="event-image"
+                />
+              </a>
+              <a
+                href="https://twvt.me/kaion20210723"
+                class="event-item"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <img
+                  src="/assets/20.webp"
+                  alt="Kaion Event 20"
+                  class="event-image"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- 2段目：右から左へスライド -->
+          <div class="events-slider events-slider-rtl">
+            <div class="events-slider-track">
+              <a href="https://twipla.jp/events/311814" class="event-item">
+                <img
+                  src="/assets/11.webp"
+                  alt="Twipla Event 311814"
+                  class="event-image"
+                />
+              </a>
+              <a href="#https://twipla.jp/events/327750" class="event-item">
+                <img
+                  src="/assets/12.webp"
+                  alt="Event 5 Image"
+                  class="event-image"
+                />
+              </a>
+              <a href="#https://twipla.jp/events/349656" class="event-item">
+                <img
+                  src="/assets/13.webp"
+                  alt="Event 6 Image"
+                  class="event-image"
+                />
+              </a>
+              <a href="https://twipla.jp/events/364445" class="event-item">
+                <img
+                  src="/assets/14.webp"
+                  alt="Kaion Event 14"
+                  class="event-image"
+                />
+              </a>
+              <a href="https://twipla.jp/events/387655" class="event-item">
+                <img
+                  src="/assets/15.webp"
+                  alt="Kaion Event 15"
+                  class="event-image"
+                />
+              </a>
+              <a href="https://twipla.jp/events/415137" class="event-item">
+                <img
+                  src="/assets/16.webp"
+                  alt="Kaion Event 16"
+                  class="event-image"
+                />
+              </a>
+              <a href="https://twvt.me/kaion20200321" class="event-item">
+                <img
+                  src="/assets/17.webp"
+                  alt="Kaion Event 17"
+                  class="event-image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>
+            DJイベントのお誘いや、webサイトやアプリケーションに関するご質問・ご依頼がございましたら、ぜひTwitterのDMにてご連絡ください。
+          </p>
+          <p>
+            <a
+              href="https://twitter.com/Bell_staymen04"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn s-btn"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+              ><img
+                src="/assets/icon-twitter.svg"
+                alt="Twitter"
+                style="width: 20px; height: 20px; margin-right: 5px"
+              />@Bell_staymen04</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+      <script src="assets/js/main.js"></script>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">@Bell_staymen04 Web Site</div>
+            <p class="footer-desc"></p>
+            <div class="social-links">
+              <a href="https://twitter.com/Bell_staymen04" class="social-link">
+                <img src="/assets/icon-twitter.svg" alt="Twitter" />
+              </a>
+              <a href="https://github.com/bellsanct" class="social-link">
+                <img src="/assets/icon-github.svg" alt="GitHub" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-title">Contact</h4>
+            <ul class="footer-links">
+              <a
+                href="https://twitter.com/Bell_staymen04"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn s-btn"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+                ><img
+                  src="/assets/icon-twitter.svg"
+                  alt="Twitter"
+                  style="width: 20px; height: 20px; margin-right: 5px"
+                />@Bell_staymen04</a
+              >
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>2025 @Bell_staymen04</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
-
-<script>
-	document.querySelector('.close').addEventListener('click', function () {
-		const terminal = document.querySelector('.terminal');
-		terminal.classList.add('fade-out');
-		setTimeout(() => terminal.style.display = 'none', 500); // Hide after fade out
-	});
-
-	document.querySelector('.minimize').addEventListener('click', function () {
-		const terminal = document.querySelector('.terminal');
-		terminal.classList.add('minimized');
-	});
-
-	document.querySelector('.fullscreen').addEventListener('click', function () {
-		const terminal = document.querySelector('.terminal');
-		terminal.classList.toggle('fullscreen-mode');
-	});
-</script>

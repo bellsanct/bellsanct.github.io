@@ -58,76 +58,62 @@
       </nav>
     </header>
 
-    <!-- プロフィールセクション -->
-    <section id="profile" class="profile pt-32 pb-16 bg-gray-800">
-      <div class="container mx-auto px-4">
-        <div class="section-title text-center mb-12">
-          <h2 class="text-3xl font-bold text-blue-400">Profile</h2>
-        </div>
-        <div class="profile-content md:flex-row items-start gap-8">
-          <div class="profile-image text-center">
-            <img src="/assets/icon.webp" alt="Profile Image" class="mx-auto mb-4" />
-            <p class="profile-comment mb-2">
-              音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJ。
-            </p>
-            <p class="profile-comment mb-2">
-              普段はWebサイトやWebアプリケーションの開発・運用・保守に携わりながら、インターネット上で雑用をこなしています。
-            </p>
-            <p class="profile-comment">
-              最近は県内外のスーパー銭湯通いが趣味になりつつあるが、じっとしていることが苦手なため長風呂できないことが悩み。
-            </p>
+      <!-- プロフィールセクション（カード風・バランス調整・レスポンシブ対応） -->
+      <section id="profile" class="profile pt-32 pb-16 bg-gray-800 flex justify-center">
+        <div class="w-[90vw] max-w-4xl mx-auto">
+          <div class="section-title text-center mb-8">
+            <h2 class="text-3xl font-bold text-blue-400">Profile</h2>
           </div>
-          <div class="profile-text flex-1">
-            <!-- CLI風プロフィール表示 -->
-            <div class="cli-container p-4 rounded shadow text-sm font-mono">
-              <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">whoami</span></div>
-              <div class="cli-line cli-response mb-2">がーべ</div>
-              <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">cat profile.txt</span></div>
-              <div class="cli-line cli-response mb-2">
-                <span class="cli-highlight  font-bold">Twitter: </span>
-                <a href="https://twitter.com/Bell_staymen04" target="_blank" class="underline hover:text-blue-300">@Bell_staymen04</a><br />
-                <span class="cli-highlight  font-bold">Roles: </span>
-                Web Engineer, Project Manager, DJ, Organizer
-              </div>
-              <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">cat skills.txt</span></div>
-              <div class="cli-line cli-response mb-2">
-                Languages:<br />
-                HTML, CSS, JavaScript(React, Vue.js), PHP(WordPress, Laravel, CodeIgniter)<br /><br />
-                Database:<br />
-                MySQL, PostgreSQL, DynamoDB<br /><br />
-                AWS/Cloud:<br />
-                AWS (EC2, S3, RDS, Lambda, CloudFront), CloudFormation, Terraform, Serverless, CI/CD<br />
-              </div>
-              <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">cat events.txt</span></div>
-              <div class="cli-line cli-response mb-2">
-                <span class="cli-highlight font-bold">Organize: </span>
-                <a href="https://outermusicroom.site/" target="_blank" class="underline hover:text-blue-300">#OuterMusicRoom</a><br />
-                <span class="cli-highlight font-bold">Organized: </span>
-                <a href="https://bellsanct.github.io/kaion/" target="_blank" class="underline hover:text-blue-300">#快創音楽室</a><br />
-                <span class="cli-highlight font-bold">Organized: </span>
-                <a href="https://twipla.jp/events/387211" target="_blank" class="underline hover:text-blue-300">#ROCKON_TOHOKU</a><br />
-              </div>
-              <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">ls hobbies/</span></div>
-              <div class="cli-line cli-response">
-                Event_Organizing/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Planning/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Promotion/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Management/<br />
-                DJ/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Trance/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;TechDance/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;HardDance/<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Funkot/<br />
-                Blue_Archive/<br />
-                Genshin_Impact/<br />
-                Houkai_Star_Rail/<br />
-                Dungeon&Fighter/<br />
+          <div class="bg-gray-900/90 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center md:items-stretch mx-auto" style="width:80vw;max-width:900px;">
+            <!-- 左側：アイコンと自己紹介 -->
+            <div class="flex flex-col items-center justify-center md:w-[45%] p-10 border-b md:border-b-0 md:border-r border-gray-700">
+              <img src="/assets/icon.webp" alt="Profile Image" class="w-40 h-40 md:w-48 md:h-48 rounded-full shadow-lg ring-4 ring-blue-500/50 mb-4 object-cover" />
+              <p class="mb-2 pt-5 text-center text-base">音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJ。</p>
+              <p class="mb-2 text-center text-base">最近はスパ銭通いが趣味になりつつあるが、じっとしていることが苦手なため長風呂できないことが悩み。</p>
+            </div>
+            <!-- 右側：CLI風プロフィール -->
+            <div class="flex-1 flex items-center justify-center p-6 md:p-8">
+              <div class="cli-container w-full bg-gray-800/80 p-4 rounded-lg shadow text-sm font-mono">
+                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">whoami</span></div>
+                <div class="cli-line cli-response mb-2">Bell_staymen04 (がーべ)</div>
+                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">show contact.card</span></div>
+                <div class="cli-line cli-response mb-2">
+                  <span class="cli-highlight font-bold">Twitter:</span>
+                  <a href="https://twitter.com/Bell_staymen04" target="_blank" class="underline hover:text-blue-300">@Bell_staymen04</a><br />
+                  <span class="cli-highlight font-bold">Roles:</span>
+                  Web&nbsp;Engineer / DJ / Organizer<br />
+                  <span class="cli-highlight font-bold">Organize:</span>
+                  <a href="https://outermusicroom.site/" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#OuterMusicRoom</a><br />
+                  <span class="cli-highlight font-bold">Organized:</span>
+                  <a href="https://bellsanct.github.io/kaion/" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#快創音楽室</a>, 
+                  <a href="https://twipla.jp/events/387211" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#ROCKON_TOHOKU</a>
+                </div>
+                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">show skills.list</span></div>
+                <div class="cli-line cli-response mb-2">
+                  <span class="cli-highlight font-bold">Languages:</span><br />
+                  HTML, CSS, JavaScript (<span class="text-blue-300">React</span>, <span class="text-blue-300">Vue.js</span>), PHP (<span class="text-blue-300">WordPress</span>, <span class="text-blue-300">Laravel</span>, <span class="text-blue-300">CodeIgniter</span>)<br />
+                  <span class="cli-highlight font-bold">Database:</span><br />
+                  MySQL, PostgreSQL, DynamoDB<br />
+                  <span class="cli-highlight font-bold">AWS/Cloud:</span><br />
+                  AWS (EC2, S3, RDS, Lambda, CloudFront), CloudFormation, Serverless, CI/CD
+                </div>
+                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">ls favorites/</span></div>
+                <div class="cli-line cli-response">
+                  Blue&nbsp;Archive<br />
+                  Genshin&nbsp;Impact<br />
+                  Dungeon&Fighter(JPN)<br />
+                  Music<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;Trance<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;TechDance<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;HardStyle<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;Funkot<br />  
+                  &nbsp;&nbsp;&nbsp;&nbsp;...etc!<br />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <!-- EVENTSセクション -->
     <section id="events" class="events py-16 bg-gray-700">

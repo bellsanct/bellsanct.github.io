@@ -7,22 +7,22 @@ const tools = [
   {
     title: "Minify/Clean",
     description: "HTML/CSS/JSのミニファイとフォーマット",
-    link: "https://bellsanct-tools.vercel.app/",
+    link: "https://bellsanct-tools.vercel.app/MinifyTool",
   },
   {
     title: "文字数カウンター",
     description: "リアルタイム文字数カウント",
-    link: "https://bellsanct.github.io/tools/count.html",
+    link: "https://bellsanct-tools.vercel.app/CharCalc",
   },
   {
     title: "Markdownビュワー",
     description: "リアルタイムプレビュー",
-    link: "https://bellsanct.github.io/tools/markdown.html",
+    link: "https://bellsanct.github.io/markdown-editor/",
   },
   {
     title: "JSON⇔YAML変換",
     description: "相互変換ツール",
-    link: "https://bellsanct.github.io/tools/jsonyaml.html",
+    link: "https://bellsanct-tools.vercel.app/JsonYaml",
   },
 ];
 

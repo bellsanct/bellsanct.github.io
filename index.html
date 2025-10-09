@@ -3,310 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJとして活動するBell_staymen04の公式ウェブサイトです。プロフィールや実績などをご覧いただけます。" />
+    <meta name="keywords" content="Bell_staymen04, DJ, OuterMusicRoom, Web Engineer, 快創音楽室, イベントオーガナイザー" />
+    <meta name="author" content="Bell_staymen04" />
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="@Bell_staymen04 Web Site" />
     <meta property="og:description" content="@Bell_staymen04 Web Site" />
     <meta property="og:url" content="https://bellsanct.github.io" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/assets/top.webp" />
-    <meta
-      name="description"
-      content="音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJとして活動するBell_staymen04の公式ウェブサイトです。プロフィールや実績などをご覧いただけます。"
-    />
+    <meta property="og:site_name" content="@Bell_staymen04 Web Site" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Bell_staymen04" />
+    <meta name="twitter:title" content="@Bell_staymen04 Web Site" />
+    <meta name="twitter:description" content="音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJとして活動するBell_staymen04の公式ウェブサイト" />
+    <meta name="twitter:image" content="/assets/top.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <title>@Bell_staymen04 Web Site</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR9L3G0EH5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JR9L3G0EH5');
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR9L3G0EH5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-JR9L3G0EH5');
-  </script>
-  <body class="bg-gray-900 text-gray-200">
-    <!-- ヘッダー -->
-    <header class="fixed top-0 left-0 w-full bg-black bg-opacity-90 shadow z-50">
-      <div class="container mx-auto px-4 flex justify-between items-center py-4">
-        <a href="#" class="text-white text-lg font-bold">@Bell_staymen04 Web Site</a>
-        
-        <!-- PCナビゲーション -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-200 hover:text-blue-400">Home</a>
-          <a href="#profile" class="text-gray-200 hover:text-blue-400">Profile</a>
-          <a href="#events" class="text-gray-200 hover:text-blue-400">Organize</a>
-          <a href="#tools" class="text-gray-200 hover:text-blue-400">Tools</a>
-          <a href="#contact" class="text-gray-200 hover:text-blue-400">Contact</a>
-        </nav>
-    
-        <!-- ハンバーガーメニュー -->
-        <div id="hamburger" class="hamburger md:hidden flex flex-col space-y-1 cursor-pointer">
-          <span class="block w-8 h-1 bg-gray-200 rounded transition-all"></span>
-          <span class="block w-8 h-1 bg-gray-200 rounded transition-all"></span>
-          <span class="block w-8 h-1 bg-gray-200 rounded transition-all"></span>
-        </div>
-      </div>
-    
-      <!-- モバイルメニュー -->
-      <nav id="mobile-menu" class="hidden flex flex-col items-center absolute top-16 left-0 w-full bg-black bg-opacity-95 py-6 space-y-4">
-        <a href="#" class="text-gray-200 text-xl hover:text-blue-400">Home</a>
-        <a href="#profile" class="text-gray-200 text-xl hover:text-blue-400">Profile</a>
-        <a href="#events" class="text-gray-200 text-xl hover:text-blue-400">Organize</a>
-        <a href="#tools" class="text-gray-200 text-xl hover:text-blue-400">Tools</a>
-        <a href="#contact" class="text-gray-200 text-xl hover:text-blue-400">Contact</a>
-      </nav>
-    </header>
-
-      <!-- プロフィールセクション（カード風・バランス調整・レスポンシブ対応） -->
-      <section id="profile" class="profile pt-32 pb-16 bg-gray-800 flex justify-center">
-        <div class="w-[98vw] max-w-6xl mx-auto">
-          <div class="section-title text-center mb-8">
-            <h2 class="text-3xl font-bold text-blue-400">Profile</h2>
-          </div>
-          <div class="bg-gray-900/90 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center md:items-stretch mx-auto">
-            <!-- 左側：アイコンと自己紹介 -->
-            <div class="flex flex-col items-center justify-center md:w-[45%] p-10 border-b md:border-b-0 md:border-r border-gray-700">
-              <img src="/assets/icon.webp" alt="Profile Image" class="w-40 h-40 md:w-48 md:h-48 rounded-full shadow-lg ring-4 ring-blue-500/50 mb-4 object-cover" />
-              <p class="mb-2 pt-5 text-center text-base">音楽ゲーム系オールジャンルDJイベントOuterMusicRoomのオーガナイザー兼DJ。</p>
-              <p class="mb-2 pt-5 text-center text-base">普段はWebサイトやWebアプリケーションの開発・運用保守をしたりインターネット雑用をこなしています。</p>
-              <p class="mb-2 text-center text-base">最近はスパ銭通いが趣味になりつつあるが、じっとしていることが苦手なため長風呂できないことが悩み。</p>
-            </div>
-            <!-- 右側：CLI風プロフィール -->
-            <div class="flex-1 flex items-stretch justify-center p-6 md:p-8 h-full">
-              <div class="cli-container w-full bg-gray-800/80 p-4 rounded-lg shadow text-sm font-mono flex flex-col justify-start">
-                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">whoami</span></div>
-                <div class="cli-line cli-response mb-2">Bell_staymen04 (がーべ)</div>
-                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">show contact.card</span></div>
-                <div class="cli-line cli-response mb-2">
-                  <span class="cli-highlight font-bold">Twitter:</span>
-                  <a href="https://twitter.com/Bell_staymen04" target="_blank" class="underline hover:text-blue-300">@Bell_staymen04</a><br />
-                  <span class="cli-highlight font-bold">Roles:</span>
-                  Web&nbsp;Engineer / DJ / Organizer<br />
-                  <span class="cli-highlight font-bold">Organize:</span>
-                  <a href="https://outermusicroom.site/" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#OuterMusicRoom</a><br />
-                  <span class="cli-highlight font-bold">Organized:</span>
-                  <a href="https://bellsanct.github.io/kaion/" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#快創音楽室</a>, 
-                  <a href="https://twipla.jp/events/387211" target="_blank" class="text-blue-300 font-mono underline hover:text-blue-400">#ROCKON_TOHOKU</a>
-                </div>
-                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">show skills.list</span></div>
-                <div class="cli-line cli-response mb-2">
-                  <span class="cli-highlight font-bold">Languages:</span><br />
-                  HTML, CSS, JavaScript (<span class="text-blue-300">React</span>, <span class="text-blue-300">Vue.js</span>), PHP (<span class="text-blue-300">WordPress</span>, <span class="text-blue-300">Laravel</span>, <span class="text-blue-300">CodeIgniter</span>)<br />
-                  <span class="cli-highlight font-bold">Database:</span><br />
-                  MySQL, PostgreSQL, DynamoDB<br />
-                  <span class="cli-highlight font-bold">AWS/Cloud:</span><br />
-                  AWS (EC2, S3, RDS, Lambda, CloudFront), CloudFormation, Serverless, CI/CD
-                </div>
-                <div class="cli-line"><span class="cli-prompt">$ </span><span class="cli-command">ls favorites/</span></div>
-                <div class="cli-line cli-response">
-                  Blue&nbsp;Archive<br />
-                  Genshin&nbsp;Impact<br />
-                  Dungeon&Fighter(JPN)<br />
-                  Music<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Trance<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;TechDance<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;HardStyle<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Funkot<br />  
-                  &nbsp;&nbsp;&nbsp;&nbsp;...etc!<br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <!-- EVENTSセクション -->
-    <section id="events" class="events py-16 bg-gray-700">
-      <div class="container mx-auto px-4">
-        <div class="section-title text-center mb-12">
-          <h2 class="text-3xl font-bold text-blue-400">Organize</h2>
-        </div>
-        <div class="events-slider-container overflow-hidden">
-          <!-- 1段目：左から右へスライド -->
-          <div class="events-slider events-slider-ltr">
-            <div class="events-slider-track flex space-x-4">
-              <a href="https://outermusicroom.site/omr-3" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/o3.webp" alt="Outer Music Room Event 3" class="event-image object-cover" />
-              </a>
-              <a href="https://outermusicroom.site/omr-2" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/o2.webp" alt="Outer Music Room Event 2" class="event-image object-cover" />
-              </a>
-              <a href="https://outermusicroom.site/omr-1" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/o1.webp" alt="Outer Music Room Event 1" class="event-image object-cover" />
-              </a>
-              <a href="https://bellsanct.github.io/kaion/23/" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/23.webp" alt="Kaion Event 23" class="event-image object-cover" />
-              </a>
-              <a href="https://bellsanct.github.io/kaion/22/" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/22.webp" alt="Kaion Event 22" class="event-image object-cover" />
-              </a>
-              <a href="https://bellsanct.github.io/kaion/21/" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/21.webp" alt="Kaion Event 21" class="event-image object-cover" />
-              </a>
-              <a href="https://twvt.me/kaion20210723" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/20.webp" alt="Kaion Event 20" class="event-image object-cover" />
-              </a>
-            </div>
-          </div>
-          <!-- 2段目：右から左へスライド -->
-          <div class="events-slider events-slider-rtl mt-8">
-            <div class="events-slider-track flex space-x-4">
-              <a href="https://twipla.jp/events/387211" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/rockon.webp" alt="#ROCKON_TOHOKU Event" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/311814" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/11.webp" alt="Twipla Event 311814" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/327750" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/12.webp" alt="Event 5 Image" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/349656" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/13.webp" alt="Event 6 Image" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/364445" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/14.webp" alt="Kaion Event 14" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/387655" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/15.webp" alt="Kaion Event 15" class="event-image object-cover" />
-              </a>
-              <a href="https://twipla.jp/events/415137" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/16.webp" alt="Kaion Event 16" class="event-image object-cover" />
-              </a>
-              <a href="https://twvt.me/kaion20200321" class="event-item block" target="_blank" rel="noreferrer noopener">
-                <img src="/assets/17.webp" alt="Kaion Event 17" class="event-image object-cover" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools" class="py-10 bg-gray-600">
-      <div class="container mx-auto px-4">
-        <!-- タイトル -->
-        <h2 class="text-2xl md:text-3xl text-center text-gray-100 font-bold mb-8">適当なツール置き場</h2>
-        <!-- カードを2つ並べるグリッド -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gray-800 rounded-lg p-6 flex flex-col">
-            <div class="flex items-center">
-              <span class="text-4xl mr-3">✒</span>
-              <h3 class="text-xl text-white font-semibold">Minify/Cleanツール</h3>
-            </div>
-            <p class="text-gray-300 mt-3 mb-4">
-              HTML/CSS/JSの簡易的な圧縮・復元を行うことができるツールです
-            </p>
-            <a href="https://bellsanct-tools.vercel.app/MinifyTool" target="_blank" class="mt-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
-              Minify/Cleanツールを試す
-            </a>
-          </div>
-          <div class="bg-gray-800 rounded-lg p-6 flex flex-col">
-            <div class="flex items-center">
-              <span class="text-4xl mr-3">🔢</span>
-              <h3 class="text-xl text-white font-semibold">文字数カウンター</h3>
-            </div>
-            <p class="text-gray-300 mt-3 mb-4">
-              入力テキストの文字数（スペース有無）、行数、段落数をカウントするツールです。
-            </p>
-            <a href="https://bellsanct-tools.vercel.app/CharCalc" class="mt-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
-              文字数カウンターを試す
-            </a>
-          </div>
-          <div class="bg-gray-800 rounded-lg p-6 flex flex-col">
-            <div class="flex items-center">
-              <span class="text-4xl mr-3">📗</span>
-              <h3 class="text-xl text-white font-semibold">Markdownビュワー</h3>
-            </div>
-            <p class="text-gray-300 mt-3 mb-4">
-              Markdown形式のテキストをリアルタイムでプレビュー表示するツールです。
-            </p>
-            <a href="https://bellsanct.github.io/markdown-editor/" target="_blank" class="mt-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
-              Markdownビュワーを試す
-            </a>
-          </div>
-          <div class="bg-gray-800 rounded-lg p-6 flex flex-col">
-            <div class="flex items-center">
-              <span class="text-4xl mr-3">🔁</span>
-              <h3 class="text-xl text-white font-semibold">JSON⇔YAML変換ツール</h3>
-            </div>
-            <p class="text-gray-300 mt-3 mb-4">
-              JSON形式とYAML形式を相互に変換できるシンプルなツールです。
-            </p>
-            <a href="https://bellsanct-tools.vercel.app/JsonYaml" target="_blank" class="mt-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
-              JSON⇔YAML変換を試す
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- お問い合わせセクション -->
-    <section id="contact" class="contact py-16">
-      <div class="container mx-auto px-4">
-        <div class="section-title text-center mb-8">
-          <h2 class="text-3xl font-bold text-white-400">Contact</h2>
-          <p class="mt-4">
-            DJイベントのお誘いや、webサイトやアプリケーションに関するご質問・ご依頼がございましたら、ぜひTwitterのDMにてご連絡ください。
-          </p>
-            <a href="https://twitter.com/Bell_staymen04" target="_blank" rel="noopener noreferrer" class="btn s-btn inline-flex items-center justify-center text-white font-semibold py-2 px-4 rounded">
-              <img src="/assets/icon-twitter.svg" alt="Twitter" class="w-5 h-5 mr-2" />@Bell_staymen04
-            </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="bg-gray-800 py-6">
-      <div class="container mx-auto px-4">
-        <div class="footer-content grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-          <div class="footer-col">
-            <div class="footer-logo text-xl font-bold text-white">@Bell_staymen04 Web Site</div>
-            <div class="social-links flex space-x-4 mt-2">
-              <a href="https://twitter.com/Bell_staymen04" class="social-link">
-                <img src="/assets/icon-twitter.svg" alt="Twitter" class="w-5 h-5" />
-              </a>
-              <a href="https://github.com/bellsanct" class="social-link">
-                <img src="/assets/icon-github.svg" alt="GitHub" class="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-          <div class="footer-col text-white">
-            <div class="footer-title text-lg font-semibold">Contact</div>
-            <ul class="footer-links mt-2">
-              <li>
-                <a href="https://twitter.com/Bell_staymen04" target="_blank" rel="noopener noreferrer" class="btn s-btn inline-flex items-center justify-center text-white font-semibold py-2 px-4 rounded">
-                  <img src="/assets/icon-twitter.svg" alt="Twitter" class="w-5 h-5 mr-2" />@Bell_staymen04
-                </a>    
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom text-center text-gray-400 text-sm">
-          <p>2025 @Bell_staymen04</p>
-        </div>
-      </div>
-    </footer>
-    <script src="assets/js/main.js"></script>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuLinks = mobileMenu.querySelectorAll("a");
-
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    hamburger.classList.toggle("open");
-  });
-
-  menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      hamburger.classList.remove("open");
-    });
-  });
-});
-</script>

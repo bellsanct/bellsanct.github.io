@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git restore:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "WebFetch(domain:rangsloft.com)",
+      "WebFetch(domain:pbs.twimg.com)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:1982st.net)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:bellsanct.github.io)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

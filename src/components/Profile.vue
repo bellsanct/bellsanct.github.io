@@ -438,12 +438,12 @@ onMounted(() => {
 /* Terminal Body */
 .terminal-body {
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   font-family: "Fira Code", monospace;
 }
 
 [data-theme="dark"] .terminal-body {
-  background: rgba(26, 20, 32, 0.6);
+  background: rgba(31, 26, 39, 0.5);
 }
 
 .terminal-line {

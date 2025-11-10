@@ -24,6 +24,11 @@ const tools = [
     description: "相互変換ツール",
     link: "https://bellsanct-tools.vercel.app/JsonYaml",
   },
+  {
+    title: "JSON可視化",
+    description: "JSONデータを視覚的に表示",
+    link: "https://bellsanct-tools.vercel.app/JSONVisualization",
+  },
 ];
 
 onMounted(() => {

@@ -10,7 +10,13 @@
       "WebFetch(domain:x.com)",
       "WebFetch(domain:1982st.net)",
       "Bash(timeout:*)",
-      "WebFetch(domain:bellsanct.github.io)"
+      "WebFetch(domain:bellsanct.github.io)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh issue comment:*)"
     ],
     "deny": [],
     "ask": []

@@ -5,6 +5,11 @@ const isVisible = ref(false);
 
 const works = [
   {
+    title: "カタネガイ 音楽集 特設サイト",
+    url: "https://katanegai-ost.xyz",
+    thumbnail: "/assets/katanegai-ost.webp",
+  },
+  {
     title: "OuterMusicRoom Website",
     url: "https://outermusicroom.site/",
     thumbnail: "/assets/omr4-2.webp",

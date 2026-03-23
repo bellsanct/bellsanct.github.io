@@ -1,0 +1,196 @@
+<script setup>
+import { ref, onMounted } from "vue";
+
+const isVisible = ref(false);
+
+const works = [
+  {
+    title: "OuterMusicRoom Website",
+    url: "https://outermusicroom.site/",
+    thumbnail: "/assets/omr4-2.webp",
+  },
+];
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true;
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  const section = document.querySelector("#works");
+  if (section) observer.observe(section);
+});
+</script>
+
+<template>
+  <section id="works" class="works-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Works</h2>
+        <p class="section-description">制作したウェブサイト・ツール</p>
+      </div>
+
+      <Transition name="fade-up">
+        <div v-if="isVisible" class="works-grid">
+          <a
+            v-for="work in works"
+            :key="work.title"
+            :href="work.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-card"
+          >
+            <div class="work-thumbnail-wrapper">
+              <img
+                :src="work.thumbnail"
+                :alt="work.title"
+                class="work-thumbnail"
+              />
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">{{ work.title }}</h3>
+              <span class="work-link-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </Transition>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.works-section {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: "Crimson Pro", serif;
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.work-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] .work-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-medium);
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--lavender);
+}
+
+.work-thumbnail-wrapper {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.work-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-card:hover .work-thumbnail {
+  transform: scale(1.03);
+}
+
+.work-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.work-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+.work-link-icon {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.work-card:hover .work-link-icon {
+  color: var(--lavender-dark);
+}
+
+/* Transition */
+.fade-up-enter-active {
+  transition: all 0.8s ease-out;
+}
+
+.fade-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .works-section {
+    padding: var(--section-gap-sm) 0;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+}
+</style>

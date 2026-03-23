@@ -3,6 +3,7 @@ import { ref, onMounted, provide, watch } from "vue";
 import Header from "./components/Header.vue";
 import Profile from "./components/Profile.vue";
 import EventsGallery from "./components/EventsGallery.vue";
+import Works from "./components/Works.vue";
 import Tools from "./components/Tools.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
@@ -117,10 +118,10 @@ const scrollToSection = (id) => {
 
               <div class="hero-actions">
                 <button
-                  @click="scrollToSection('#events')"
+                  @click="scrollToSection('#works')"
                   class="btn btn-primary"
                 >
-                  View Events
+                  View Works
                 </button>
                 <button
                   @click="scrollToSection('#contact')"
@@ -144,6 +145,7 @@ const scrollToSection = (id) => {
       <div id="events">
         <EventsGallery />
       </div>
+      <Works />
       <Tools />
       <Contact />
       <Footer />

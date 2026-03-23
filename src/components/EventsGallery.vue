@@ -1,129 +1,78 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted } from "vue";
 
-const flyers = [
-  "/assets/11.webp",
-  "/assets/12.webp",
-  "/assets/13.webp",
-  "/assets/14.webp",
-  "/assets/15.webp",
-  "/assets/16.webp",
-  "/assets/17.webp",
-  "/assets/20.webp",
-  "/assets/21.webp",
-  "/assets/22.webp",
-  "/assets/23.webp",
-  "/assets/o1.webp",
-  "/assets/o2.webp",
-  "/assets/o3.webp",
-  "/assets/rockon.webp",
-];
-
-// Duplicate flyers for seamless loop
-const duplicatedFlyers = [...flyers, ...flyers, ...flyers];
-
-const isPaused = ref(false);
+const isVisible = ref(false);
 const selectedFlyer = ref(null);
 
-const handleFlyerClick = (flyer) => {
+const flyers = [
+  { src: "/assets/23.webp", title: "OuterMusicRoom vol.13" },
+  { src: "/assets/22.webp", title: "OuterMusicRoom vol.12" },
+  { src: "/assets/21.webp", title: "OuterMusicRoom vol.11" },
+  { src: "/assets/20.webp", title: "OuterMusicRoom vol.10" },
+  { src: "/assets/17.webp", title: "OuterMusicRoom vol.9" },
+  { src: "/assets/16.webp", title: "OuterMusicRoom vol.8" },
+  { src: "/assets/15.webp", title: "OuterMusicRoom vol.7" },
+  { src: "/assets/14.webp", title: "OuterMusicRoom vol.6" },
+  { src: "/assets/13.webp", title: "OuterMusicRoom vol.5" },
+  { src: "/assets/12.webp", title: "OuterMusicRoom vol.4" },
+  { src: "/assets/11.webp", title: "OuterMusicRoom vol.3" },
+];
+
+const openModal = (flyer) => {
   selectedFlyer.value = flyer;
 };
 
 const closeModal = () => {
   selectedFlyer.value = null;
 };
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true;
+        }
+      });
+    },
+    { threshold: 0.05 }
+  );
+
+  const section = document.querySelector("#events");
+  if (section) observer.observe(section);
+});
 </script>
 
 <template>
-  <section class="flyer-gallery-section">
-    <!-- Decorative Elements -->
-    <div class="section-decoration">
-      <div class="decoration-dot decoration-dot-1"></div>
-      <div class="decoration-dot decoration-dot-2"></div>
-      <div class="decoration-dot decoration-dot-3"></div>
-      <div class="decoration-dot decoration-dot-4"></div>
-      <div class="decoration-dot decoration-dot-5"></div>
-      <div class="decoration-line decoration-line-1"></div>
-      <div class="decoration-line decoration-line-2"></div>
-      <div class="decoration-circle decoration-circle-1"></div>
-      <div class="decoration-halo decoration-halo-1"></div>
-      <div class="decoration-halo decoration-halo-2"></div>
+  <section id="events" class="events-section">
+    <div class="section-header">
+      <h2 class="section-title">Events</h2>
+      <p class="section-description">主催したイベント一覧</p>
     </div>
 
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Events</h2>
-        <p class="section-description">主催したイベント一覧</p>
-      </div>
-    </div>
-
-    <!-- First Row: Right to Left -->
-    <div
-      class="flyer-gallery-wrapper"
-      @mouseenter="isPaused = true"
-      @mouseleave="isPaused = false"
-    >
-      <div class="flyer-gallery-track" :class="{ paused: isPaused }">
+    <Transition name="fade-up">
+      <div v-if="isVisible" class="events-grid">
         <div
-          v-for="(flyer, index) in duplicatedFlyers"
-          :key="`flyer-row1-${index}`"
+          v-for="(flyer, index) in flyers"
+          :key="index"
           class="flyer-item"
-          @click="handleFlyerClick(flyer)"
+          @click="openModal(flyer)"
         >
-          <img
-            :src="flyer"
-            :alt="`Event Flyer ${index + 1}`"
-            class="flyer-image"
-          />
+          <img :src="flyer.src" :alt="flyer.title" class="flyer-image" loading="lazy" />
+          <div class="flyer-overlay">
+            <span class="flyer-title">{{ flyer.title }}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Transition>
 
-    <!-- Second Row: Left to Right -->
-    <!--
-    <div
-      class="flyer-gallery-wrapper flyer-gallery-wrapper-reverse"
-      @mouseenter="isPaused = true"
-      @mouseleave="isPaused = false"
-    >
-      <div
-        class="flyer-gallery-track flyer-gallery-track-reverse"
-        :class="{ paused: isPaused }"
-      >
-        <div
-          v-for="(flyer, index) in duplicatedFlyers"
-          :key="`flyer-row2-${index}`"
-          class="flyer-item"
-          @click="handleFlyerClick(flyer)"
-        >
-          <img
-            :src="flyer"
-            :alt="`Event Flyer ${index + 1}`"
-            class="flyer-image"
-          />
-        </div>
-      </div>
-    </div>
-    -->
-
-    <!-- Modal for enlarged view -->
+    <!-- Modal -->
     <Transition name="modal">
-      <div v-if="selectedFlyer" class="flyer-modal" @click="closeModal">
+      <div v-if="selectedFlyer" class="modal-overlay" @click="closeModal">
         <div class="modal-content" @click.stop>
-          <button class="modal-close" @click="closeModal">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-          <img :src="selectedFlyer" alt="Selected Flyer" class="modal-image" />
+          <button class="modal-close" @click="closeModal" aria-label="閉じる">&times;</button>
+          <img :src="selectedFlyer.src" :alt="selectedFlyer.title" class="modal-image" />
+          <p class="modal-title">{{ selectedFlyer.title }}</p>
         </div>
       </div>
     </Transition>
@@ -131,341 +80,134 @@ const closeModal = () => {
 </template>
 
 <style scoped>
-.flyer-gallery-section {
-  padding: var(--section-gap) 0;
-  background: var(--bg-secondary);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Decorative Elements */
-.section-decoration {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.decoration-dot {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: var(--lavender-dark);
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.decoration-dot-1 {
-  top: 15%;
-  left: 5%;
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.decoration-dot-2 {
-  top: 40%;
-  right: 8%;
-  animation: pulse 4s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.decoration-dot-3 {
-  bottom: 25%;
-  left: 12%;
-  animation: pulse 3.5s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.decoration-dot-4 {
-  top: 60%;
-  right: 15%;
-  animation: pulse 3.8s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.decoration-dot-5 {
-  bottom: 35%;
-  right: 5%;
-  animation: pulse 4.2s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(2);
-    opacity: 0.9;
-  }
-}
-
-.decoration-line {
-  position: absolute;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--rose-light) 50%,
-    transparent 100%
-  );
-  width: 1px;
-  height: 120px;
-  opacity: 0.4;
-}
-
-.decoration-line-1 {
-  top: 20%;
-  left: 18%;
-  animation: float 9s ease-in-out infinite;
-}
-
-.decoration-line-2 {
-  bottom: 20%;
-  right: 25%;
-  animation: float 11s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-25px);
-  }
-}
-
-.decoration-circle {
-  position: absolute;
-  border: 1px solid var(--lavender-light);
-  border-radius: 50%;
-  opacity: 0.25;
-}
-
-.decoration-circle-1 {
-  width: 90px;
-  height: 90px;
-  bottom: 15%;
-  left: 8%;
-  animation: rotate 22s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.decoration-halo {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    transparent 40%,
-    var(--rose-light) 45%,
-    transparent 50%
-  );
-  opacity: 0.3;
-}
-
-.decoration-halo-1 {
-  width: 180px;
-  height: 180px;
-  top: 20%;
-  right: 10%;
-  animation: haloGlow 7s ease-in-out infinite;
-}
-
-.decoration-halo-2 {
-  width: 140px;
-  height: 140px;
-  bottom: 30%;
-  left: 12%;
-  animation: haloGlow 8s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-@keyframes haloGlow {
-  0%,
-  100% {
-    opacity: 0.2;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.15);
-  }
+.events-section {
+  padding-bottom: var(--section-gap);
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-family: "Crimson Pro", serif;
+  margin-bottom: 0.5rem;
 }
 
 .section-description {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-.flyer-gallery-wrapper {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 1rem 0;
-}
-
-.flyer-gallery-wrapper-reverse {
-  margin-top: 1rem;
-}
-
-.flyer-gallery-track {
-  display: flex;
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  animation: scroll 60s linear infinite;
-  width: max-content;
-}
-
-.flyer-gallery-track-reverse {
-  animation: scrollReverse 60s linear infinite;
-}
-
-.flyer-gallery-track.paused {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% / 3));
-  }
-}
-
-@keyframes scrollReverse {
-  0% {
-    transform: translateX(calc(-100% / 3));
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 .flyer-item {
-  flex-shrink: 0;
-  width: 150px;
-  height: 212px;
-  cursor: pointer;
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border-light);
-}
-
-[data-theme="dark"] .flyer-item {
-  background: var(--bg-secondary);
-  border-color: var(--border-medium);
-}
-
-.flyer-item:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  aspect-ratio: 7 / 10;
 }
 
 .flyer-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modal Styles */
-.flyer-modal {
+.flyer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 20, 40, 0.9) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flyer-item:hover .flyer-image {
+  transform: scale(1.05);
+}
+
+.flyer-item:hover .flyer-overlay {
+  opacity: 1;
+}
+
+.flyer-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Modal */
+.modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(45, 38, 64, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 500;
   padding: 2rem;
 }
 
 .modal-content {
   position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--border-light);
+  max-width: 500px;
+  max-height: 85vh;
 }
 
-[data-theme="dark"] .modal-content {
-  background: var(--bg-secondary);
-  border-color: var(--border-medium);
+.modal-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-title {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 1rem;
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid var(--border-light);
-  border-radius: 50%;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-  z-index: 10;
-  color: var(--text-primary);
-}
-
-[data-theme="dark"] .modal-close {
-  background: var(--bg-accent);
-  border-color: var(--border-medium);
-  color: var(--text-primary);
+  transition: color 0.3s ease;
+  line-height: 1;
 }
 
 .modal-close:hover {
-  background: var(--lavender);
-  color: white;
-  transform: rotate(90deg);
-  border-color: var(--lavender);
+  color: var(--text-primary);
 }
 
-.modal-image {
-  max-width: 100%;
-  max-height: 90vh;
-  display: block;
-  object-fit: contain;
+/* Transitions */
+.fade-up-enter-active {
+  transition: all 0.8s ease-out;
 }
 
-/* Modal Transitions */
+.fade-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
@@ -476,41 +218,17 @@ const closeModal = () => {
   opacity: 0;
 }
 
-.modal-enter-active .modal-content,
-.modal-leave-active .modal-content {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-enter-from .modal-content,
-.modal-leave-to .modal-content {
-  transform: scale(0.9);
-}
-
 /* Responsive */
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .flyer-item {
-    width: 120px;
-    height: 170px;
-  }
-
-  .flyer-gallery-track {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-description {
-    font-size: 1rem;
-  }
-
-  .flyer-gallery-wrapper {
-    padding: 0.75rem 0;
-  }
-
-  .flyer-gallery-wrapper-reverse {
-    margin-top: 0.75rem;
   }
 }
 </style>

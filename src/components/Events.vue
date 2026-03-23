@@ -76,7 +76,7 @@ onMounted(() => {
           <!-- Section Header -->
           <div class="section-header">
             <span class="section-label glass-intense">Event Archive</span>
-            <h2 class="section-title">Works</h2>
+            <h2 class="section-title">Events</h2>
           </div>
 
           <!-- Event Tabs -->

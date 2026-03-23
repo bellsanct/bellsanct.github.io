@@ -52,7 +52,7 @@ const closeModal = () => {
 
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Works</h2>
+        <h2 class="section-title">Events</h2>
         <p class="section-description">主催したイベント一覧</p>
       </div>
     </div>

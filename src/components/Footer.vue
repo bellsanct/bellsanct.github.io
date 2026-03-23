@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear();
             <div class="link-group">
               <h4 class="link-title">Navigate</h4>
               <a href="#profile" class="footer-link">About</a>
-              <a href="#works" class="footer-link">Works</a>
+              <a href="#events" class="footer-link">Events</a>
               <a href="#tools" class="footer-link">Tools</a>
               <a href="#contact" class="footer-link">Contact</a>
             </div>

@@ -39,7 +39,7 @@ onMounted(() => {
       <!-- Desktop Nav -->
       <nav class="nav desktop-nav">
         <a @click.prevent="scrollToSection('#profile')" href="#profile" class="nav-link">About</a>
-        <a @click.prevent="scrollToSection('#works')" href="#works" class="nav-link">Works</a>
+        <a @click.prevent="scrollToSection('#events')" href="#events" class="nav-link">Events</a>
         <a @click.prevent="scrollToSection('#tools')" href="#tools" class="nav-link">Tools</a>
         <a @click.prevent="scrollToSection('#contact')" href="#contact" class="nav-link">Contact</a>
 
@@ -98,7 +98,7 @@ onMounted(() => {
     <Transition name="mobile-menu">
       <nav v-if="mobileMenuOpen" class="mobile-nav">
         <a @click.prevent="scrollToSection('#profile')" href="#profile" class="mobile-link">About</a>
-        <a @click.prevent="scrollToSection('#works')" href="#works" class="mobile-link">Works</a>
+        <a @click.prevent="scrollToSection('#events')" href="#events" class="mobile-link">Events</a>
         <a @click.prevent="scrollToSection('#tools')" href="#tools" class="mobile-link">Tools</a>
         <a @click.prevent="scrollToSection('#contact')" href="#contact" class="mobile-link">Contact</a>
       </nav>

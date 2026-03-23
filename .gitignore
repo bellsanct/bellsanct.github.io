@@ -49,3 +49,7 @@ coverage
 
 # Claude
 .claude/*
+
+# Project-specific
+design/
+implement/

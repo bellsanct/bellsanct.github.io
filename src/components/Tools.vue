@@ -165,6 +165,10 @@ onMounted(() => {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
   .tool-card {
     padding: 1.5rem;
   }

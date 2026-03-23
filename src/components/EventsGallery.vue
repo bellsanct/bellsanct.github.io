@@ -237,7 +237,7 @@ onMounted(() => {
 @media (max-width: 768px) {
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
   }
 }
 

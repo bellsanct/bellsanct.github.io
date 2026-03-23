@@ -148,11 +148,15 @@ onMounted(() => {
 
   .contact-actions {
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .contact-actions .btn-primary,
+  .contact-actions .btn-secondary {
     width: 100%;
+    max-width: 300px;
+    text-align: center;
     justify-content: center;
   }
 }

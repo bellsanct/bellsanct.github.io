@@ -185,6 +185,8 @@ onMounted(() => {
 
   .profile-links {
     justify-content: center;
+    gap: 1rem;
+    font-size: 0.8125rem;
   }
 }
 </style>

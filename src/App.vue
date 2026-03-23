@@ -55,7 +55,7 @@ import Contact from "./components/Contact.vue";
   .main-content {
     margin-left: 0;
     max-width: 100%;
-    padding: 6rem 1.5rem 2rem;
+    padding: 4.5rem 1.5rem 2rem;
   }
 }
 </style>

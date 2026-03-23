@@ -82,45 +82,15 @@ const scrollToSection = (id) => {
             <div class="decoration-star decoration-star-1"></div>
             <div class="decoration-star decoration-star-2"></div>
             <div class="decoration-star decoration-star-3"></div>
-            <div class="decoration-star decoration-star-4"></div>
-            <div class="decoration-star decoration-star-5"></div>
-            <div class="decoration-star decoration-star-6"></div>
-            <div class="decoration-star decoration-star-7"></div>
-            <div class="decoration-star decoration-star-8"></div>
 
             <!-- Sparkles -->
             <div class="decoration-sparkle decoration-sparkle-1"></div>
             <div class="decoration-sparkle decoration-sparkle-2"></div>
             <div class="decoration-sparkle decoration-sparkle-3"></div>
-            <div class="decoration-sparkle decoration-sparkle-4"></div>
-            <div class="decoration-sparkle decoration-sparkle-5"></div>
-            <div class="decoration-sparkle decoration-sparkle-6"></div>
-
-            <!-- Circles -->
-            <div class="decoration-circle decoration-circle-1"></div>
-            <div class="decoration-circle decoration-circle-2"></div>
-            <div class="decoration-circle decoration-circle-3"></div>
-            <div class="decoration-circle decoration-circle-4"></div>
-
-            <!-- Lines -->
-            <div class="decoration-line decoration-line-1"></div>
-            <div class="decoration-line decoration-line-2"></div>
-            <div class="decoration-line decoration-line-3"></div>
-            <div class="decoration-line decoration-line-4"></div>
-            <div class="decoration-line decoration-line-5"></div>
-
-            <!-- Dots -->
-            <div class="decoration-dot decoration-dot-1"></div>
-            <div class="decoration-dot decoration-dot-2"></div>
-            <div class="decoration-dot decoration-dot-3"></div>
-            <div class="decoration-dot decoration-dot-4"></div>
-            <div class="decoration-dot decoration-dot-5"></div>
-            <div class="decoration-dot decoration-dot-6"></div>
 
             <!-- Floating Shapes -->
             <div class="decoration-shape decoration-shape-1"></div>
             <div class="decoration-shape decoration-shape-2"></div>
-            <div class="decoration-shape decoration-shape-3"></div>
           </div>
 
           <img
@@ -371,51 +341,6 @@ const scrollToSection = (id) => {
   animation-delay: 2s;
 }
 
-.decoration-star-4 {
-  top: 38%;
-  right: 6%;
-  width: 7px;
-  height: 7px;
-  animation: twinkle 3.2s ease-in-out infinite, drift 14s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.decoration-star-5 {
-  top: 50%;
-  left: 15%;
-  width: 11px;
-  height: 11px;
-  animation: twinkle 3.8s ease-in-out infinite, drift 17s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-.decoration-star-6 {
-  bottom: 15%;
-  right: 20%;
-  width: 8px;
-  height: 8px;
-  animation: twinkle 4.2s ease-in-out infinite, drift 19s ease-in-out infinite;
-  animation-delay: 2.5s;
-}
-
-.decoration-star-7 {
-  top: 65%;
-  right: 8%;
-  width: 6px;
-  height: 6px;
-  animation: twinkle 3.3s ease-in-out infinite, drift 13s ease-in-out infinite;
-  animation-delay: 0.8s;
-}
-
-.decoration-star-8 {
-  top: 18%;
-  left: 25%;
-  width: 9px;
-  height: 9px;
-  animation: twinkle 3.6s ease-in-out infinite, drift 20s ease-in-out infinite;
-  animation-delay: 3s;
-}
-
 [data-theme="dark"] .decoration-star {
   background: var(--rose-light);
 }
@@ -496,31 +421,6 @@ const scrollToSection = (id) => {
   animation-delay: 3s;
 }
 
-.decoration-sparkle-4 {
-  top: 35%;
-  left: 22%;
-  width: 12px;
-  height: 12px;
-  animation: sparkleFloat 5.8s ease-in-out infinite, sparkleRotate 9s linear infinite;
-  animation-delay: 2s;
-}
-
-.decoration-sparkle-5 {
-  bottom: 40%;
-  right: 10%;
-  width: 15px;
-  height: 15px;
-  animation: sparkleFloat 6.2s ease-in-out infinite, sparkleRotate 13s linear infinite;
-  animation-delay: 0.5s;
-}
-
-.decoration-sparkle-6 {
-  top: 70%;
-  left: 8%;
-  animation: sparkleFloat 5.3s ease-in-out infinite, sparkleRotate 10.5s linear infinite;
-  animation-delay: 4s;
-}
-
 [data-theme="dark"] .decoration-sparkle::before,
 [data-theme="dark"] .decoration-sparkle::after {
   background: var(--coral-light);
@@ -543,218 +443,6 @@ const scrollToSection = (id) => {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-.decoration-circle {
-  position: absolute;
-  border: 3px solid var(--rose-light);
-  border-radius: 50%;
-  opacity: 0.25;
-}
-
-.decoration-circle-1 {
-  width: 140px;
-  height: 140px;
-  top: 28%;
-  right: 8%;
-  animation: rotateCircle 20s linear infinite, pulse 4s ease-in-out infinite;
-}
-
-.decoration-circle-2 {
-  width: 90px;
-  height: 90px;
-  bottom: 32%;
-  left: 10%;
-  animation: rotateCircle 15s linear infinite reverse, pulse 5s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.decoration-circle-3 {
-  width: 110px;
-  height: 110px;
-  top: 15%;
-  left: 30%;
-  animation: rotateCircle 18s linear infinite, pulse 4.5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.decoration-circle-4 {
-  width: 70px;
-  height: 70px;
-  bottom: 18%;
-  right: 25%;
-  animation: rotateCircle 16s linear infinite reverse, pulse 5.5s ease-in-out infinite;
-  animation-delay: 3s;
-}
-
-[data-theme="dark"] .decoration-circle {
-  border-color: var(--lavender);
-}
-
-@keyframes rotateCircle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.25;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.1);
-  }
-}
-
-.decoration-line {
-  position: absolute;
-  width: 2px;
-  height: 150px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--lavender-light) 50%,
-    transparent 100%
-  );
-  opacity: 0.35;
-}
-
-.decoration-line-1 {
-  top: 22%;
-  left: 4%;
-  height: 160px;
-  animation: floatLine 8s ease-in-out infinite;
-}
-
-.decoration-line-2 {
-  top: 52%;
-  right: 10%;
-  height: 130px;
-  animation: floatLine 9s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.decoration-line-3 {
-  bottom: 18%;
-  left: 16%;
-  height: 140px;
-  animation: floatLine 7s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.decoration-line-4 {
-  top: 40%;
-  right: 22%;
-  height: 120px;
-  animation: floatLine 8.5s ease-in-out infinite;
-  animation-delay: 3s;
-}
-
-.decoration-line-5 {
-  bottom: 35%;
-  left: 28%;
-  height: 110px;
-  animation: floatLine 7.5s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-[data-theme="dark"] .decoration-line {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--rose) 50%,
-    transparent 100%
-  );
-}
-
-@keyframes floatLine {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.25;
-  }
-  50% {
-    transform: translateY(-30px) rotate(5deg);
-    opacity: 0.5;
-  }
-}
-
-/* Dots */
-.decoration-dot {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: var(--rose);
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.decoration-dot-1 {
-  top: 28%;
-  left: 12%;
-  animation: dotBounce 3s ease-in-out infinite;
-}
-
-.decoration-dot-2 {
-  top: 45%;
-  right: 14%;
-  width: 10px;
-  height: 10px;
-  animation: dotBounce 3.5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.decoration-dot-3 {
-  bottom: 30%;
-  left: 20%;
-  width: 7px;
-  height: 7px;
-  animation: dotBounce 4s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.decoration-dot-4 {
-  top: 60%;
-  right: 20%;
-  width: 9px;
-  height: 9px;
-  animation: dotBounce 3.8s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.decoration-dot-5 {
-  bottom: 45%;
-  left: 8%;
-  animation: dotBounce 3.3s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-.decoration-dot-6 {
-  top: 75%;
-  right: 12%;
-  width: 6px;
-  height: 6px;
-  animation: dotBounce 4.2s ease-in-out infinite;
-  animation-delay: 2.5s;
-}
-
-[data-theme="dark"] .decoration-dot {
-  background: var(--coral);
-}
-
-@keyframes dotBounce {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateY(-20px) scale(1.3);
-    opacity: 0.8;
   }
 }
 
@@ -784,24 +472,8 @@ const scrollToSection = (id) => {
   animation-delay: 2s;
 }
 
-.decoration-shape-3 {
-  top: 50%;
-  right: 5%;
-  width: 35px;
-  height: 35px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  background: var(--rose-light);
-  border: none;
-  animation: floatShape 13s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
 [data-theme="dark"] .decoration-shape {
   border-color: var(--coral);
-}
-
-[data-theme="dark"] .decoration-shape-3 {
-  background: var(--lavender-light);
 }
 
 @keyframes floatShape {

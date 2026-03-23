@@ -86,6 +86,8 @@ onMounted(() => {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lavender-dark);
 }
 
 .section-description {
@@ -183,5 +185,15 @@ onMounted(() => {
   .section-header {
     margin-bottom: 3rem;
   }
+}
+
+.works-section::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lavender-dark), transparent);
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 </style>

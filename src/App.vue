@@ -38,12 +38,12 @@ import Contact from "./components/Contact.vue";
 }
 
 .site-footer {
-  padding: 3rem 0 2rem;
+  padding: 2rem 0;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.875rem;
   border-top: 1px solid var(--border-light);
-  margin-top: var(--section-gap);
+  margin-top: 2rem;
 }
 
 /* Mobile */

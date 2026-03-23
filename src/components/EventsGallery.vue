@@ -94,6 +94,8 @@ onMounted(() => {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lavender-dark);
 }
 
 .section-description {
@@ -113,6 +115,13 @@ onMounted(() => {
   overflow: hidden;
   cursor: pointer;
   aspect-ratio: 7 / 10;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flyer-item:hover {
+  border-color: rgba(155, 146, 192, 0.4);
+  box-shadow: 0 0 20px rgba(155, 146, 192, 0.15);
 }
 
 .flyer-image {
@@ -230,5 +239,15 @@ onMounted(() => {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
+}
+
+.events-section::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lavender-dark), transparent);
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 </style>

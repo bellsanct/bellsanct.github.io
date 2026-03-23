@@ -96,6 +96,8 @@ onMounted(() => {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lavender-dark);
 }
 
 .section-description {
@@ -148,7 +150,7 @@ onMounted(() => {
 
 .tool-card:hover .tool-arrow {
   color: var(--lavender);
-  transform: translateX(4px);
+  transform: translate(4px, -4px);
 }
 
 /* Transitions */
@@ -166,5 +168,15 @@ onMounted(() => {
   .tool-card {
     padding: 1.5rem;
   }
+}
+
+.tools-section::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lavender-dark), transparent);
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 </style>

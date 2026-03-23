@@ -76,6 +76,9 @@ onMounted(() => {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(155, 146, 192, 0.05);
 }
 
 .profile-avatar-wrapper {

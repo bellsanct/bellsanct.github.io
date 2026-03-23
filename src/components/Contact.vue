@@ -91,7 +91,7 @@ onMounted(() => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--lavender-dark);
+  background: linear-gradient(135deg, var(--lavender-dark) 0%, var(--lavender) 100%);
   color: var(--bg-primary);
   border: none;
   padding: 0.75rem 2rem;
@@ -100,11 +100,13 @@ onMounted(() => {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary:hover {
-  background: var(--lavender);
   transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(155, 146, 192, 0.3);
 }
 
 .btn-secondary {

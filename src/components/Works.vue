@@ -72,29 +72,25 @@ onMounted(() => {
 
 <style scoped>
 .works-section {
-  padding: var(--section-gap) 0;
-  background: var(--bg-primary);
+  padding-bottom: var(--section-gap);
   position: relative;
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-family: "Crimson Pro", serif;
+  margin-bottom: 0.5rem;
 }
 
 .section-description {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .works-grid {
@@ -107,7 +103,7 @@ onMounted(() => {
 
 .work-card {
   display: block;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-light);
   border-radius: 12px;
   overflow: hidden;
@@ -115,11 +111,6 @@ onMounted(() => {
   color: inherit;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="dark"] .work-card {
-  background: var(--bg-secondary);
-  border-color: var(--border-medium);
 }
 
 .work-card:hover {
@@ -181,7 +172,7 @@ onMounted(() => {
 /* Responsive */
 @media (max-width: 768px) {
   .works-section {
-    padding: var(--section-gap-sm) 0;
+    padding-bottom: var(--section-gap-sm);
   }
 
   .works-grid {

@@ -12,7 +12,7 @@ const works = [
   {
     title: "OuterMusicRoom Website",
     url: "https://outermusicroom.site/",
-    thumbnail: "/assets/omr4-2.webp",
+    thumbnail: "/assets/omr-site.webp",
   },
 ];
 

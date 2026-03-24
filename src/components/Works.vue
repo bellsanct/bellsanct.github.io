@@ -35,43 +35,41 @@ onMounted(() => {
 
 <template>
   <section id="works" class="works-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Works</h2>
-        <p class="section-description">制作したウェブサイト・ツール</p>
-      </div>
-
-      <Transition name="fade-up">
-        <div v-if="isVisible" class="works-grid">
-          <a
-            v-for="work in works"
-            :key="work.title"
-            :href="work.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-card"
-          >
-            <div class="work-thumbnail-wrapper">
-              <img
-                :src="work.thumbnail"
-                :alt="work.title"
-                class="work-thumbnail"
-              />
-            </div>
-            <div class="work-info">
-              <h3 class="work-title">{{ work.title }}</h3>
-              <span class="work-link-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </span>
-            </div>
-          </a>
-        </div>
-      </Transition>
+    <div class="section-header">
+      <h2 class="section-title">Works</h2>
+      <p class="section-description">制作したウェブサイト・ツール</p>
     </div>
+
+    <Transition name="fade-up">
+      <div v-if="isVisible" class="works-grid">
+        <a
+          v-for="work in works"
+          :key="work.title"
+          :href="work.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="work-card"
+        >
+          <div class="work-thumbnail-wrapper">
+            <img
+              :src="work.thumbnail"
+              :alt="work.title"
+              class="work-thumbnail"
+            />
+          </div>
+          <div class="work-info">
+            <h3 class="work-title">{{ work.title }}</h3>
+            <span class="work-link-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </Transition>
   </section>
 </template>
 
@@ -105,7 +103,6 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 900px;
-  margin: 0 auto;
 }
 
 .work-card {

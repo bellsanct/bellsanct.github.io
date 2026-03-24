@@ -5,17 +5,21 @@ const isVisible = ref(false);
 const selectedFlyer = ref(null);
 
 const flyers = [
-  { src: "/assets/23.webp", title: "OuterMusicRoom vol.13" },
-  { src: "/assets/22.webp", title: "OuterMusicRoom vol.12" },
-  { src: "/assets/21.webp", title: "OuterMusicRoom vol.11" },
-  { src: "/assets/20.webp", title: "OuterMusicRoom vol.10" },
-  { src: "/assets/17.webp", title: "OuterMusicRoom vol.9" },
-  { src: "/assets/16.webp", title: "OuterMusicRoom vol.8" },
-  { src: "/assets/15.webp", title: "OuterMusicRoom vol.7" },
-  { src: "/assets/14.webp", title: "OuterMusicRoom vol.6" },
-  { src: "/assets/13.webp", title: "OuterMusicRoom vol.5" },
-  { src: "/assets/12.webp", title: "OuterMusicRoom vol.4" },
-  { src: "/assets/11.webp", title: "OuterMusicRoom vol.3" },
+  { src: "/assets/omr4-flyer.webp", title: "OuterMusicRoom #4", date: "2025.11.23", url: "https://outermusicroom.site/omr-4" },
+  { src: "/assets/omr3-flyer.webp", title: "OuterMusicRoom #3", date: "2025.03.08", url: "https://outermusicroom.site/omr-3" },
+  { src: "/assets/omr2-flyer.webp", title: "OuterMusicRoom #2", date: "2024.12.01", url: "https://outermusicroom.site/omr-2" },
+  { src: "/assets/omr1-flyer.webp", title: "OuterMusicRoom #1", date: "2024.04.27", url: "https://outermusicroom.site/omr-1" },
+  { src: "/assets/23.webp", title: "快創音楽室 #23", date: "2023.07.15" },
+  { src: "/assets/22.webp", title: "快創音楽室 #22", date: "2023.02.18" },
+  { src: "/assets/21.webp", title: "快創音楽室 #21", date: "2022.07.17" },
+  { src: "/assets/20.webp", title: "快創音楽室 #20", date: "2021.07.23" },
+  { src: "/assets/17.webp", title: "快創音楽室 #17", date: "2020.03.21" },
+  { src: "/assets/16.webp", title: "快創音楽室 #16", date: "2019.11.23" },
+  { src: "/assets/15.webp", title: "快創音楽室 #15", date: "2019.07.20" },
+  { src: "/assets/14.webp", title: "快創音楽室 #14", date: "2019.04.20" },
+  { src: "/assets/13.webp", title: "快創音楽室 #13", date: "2019.01.13" },
+  { src: "/assets/12.webp", title: "快創音楽室 #12", date: "2018.09.23" },
+  { src: "/assets/11.webp", title: "快創音楽室 #11", date: "2018.06.23" },
 ];
 
 const openModal = (flyer) => {
@@ -61,6 +65,7 @@ onMounted(() => {
           <img :src="flyer.src" :alt="flyer.title" class="flyer-image" loading="lazy" />
           <div class="flyer-overlay">
             <span class="flyer-title">{{ flyer.title }}</span>
+            <span class="flyer-date">{{ flyer.date }}</span>
           </div>
         </div>
       </div>
@@ -72,7 +77,8 @@ onMounted(() => {
         <div class="modal-content" @click.stop>
           <button class="modal-close" @click="closeModal" aria-label="閉じる">&times;</button>
           <img :src="selectedFlyer.src" :alt="selectedFlyer.title" class="modal-image" />
-          <p class="modal-title">{{ selectedFlyer.title }}</p>
+          <p class="modal-title">{{ selectedFlyer.title }} <span class="modal-date">{{ selectedFlyer.date }}</span></p>
+          <a :href="selectedFlyer.url" target="_blank" rel="noopener noreferrer" class="modal-link" @click.stop>イベントページを見る →</a>
         </div>
       </div>
     </Transition>
@@ -136,7 +142,8 @@ onMounted(() => {
   inset: 0;
   background: linear-gradient(to top, rgba(26, 20, 40, 0.9) 0%, transparent 50%);
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -154,6 +161,11 @@ onMounted(() => {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-primary);
+}
+
+.flyer-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 /* Modal */
@@ -204,6 +216,26 @@ onMounted(() => {
 }
 
 .modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.modal-link {
+  display: block;
+  text-align: center;
+  color: var(--lavender-light);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.modal-link:hover {
   color: var(--text-primary);
 }
 
